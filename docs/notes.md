@@ -9,7 +9,7 @@
     - PyPI Project Name: md2lineflex
     - Owner / Organization: parkwestlabs
     - Repository name: md2lineflex
-    - Workflow name: release.yml
+    - Workflow name: publish.yml
     - Environment name: (blank)
 * Test: https://test.pypi.org/
 * Prod: https://pypi.org/
@@ -52,7 +52,7 @@ uv publish --token <your_PyPI_API_token>
 
 1. CI `ci.yml` (create PR or merge PR to main)
     - check: run `ruff` (lint/format) and `pytest`
-2. CD `release.yml` (push tags or create Release on GitHub)
+2. CD `publish.yml` (push tags or create Release on GitHub)
     - build: `uv build`
     - publish: `uv publish` (without API Token)
 

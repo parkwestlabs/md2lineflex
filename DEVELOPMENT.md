@@ -74,7 +74,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) for commit mess
     * Click **Generate release notes**.
     * Click **Publish release**.
 
-(Pushing the tag `vX.Y.Z` will automatically trigger the `.github/workflows/release.yml` pipeline to build, run smoke tests, sign, and publish the package to PyPI via OIDC Trusted Publisher).
+(Pushing the tag `vX.Y.Z` will automatically trigger the `.github/workflows/publish.yml` pipeline to build, run smoke tests, sign, and publish the package to PyPI via OIDC Trusted Publisher).
 
 ---
 
