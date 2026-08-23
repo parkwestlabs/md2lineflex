@@ -1,0 +1,44 @@
+{
+  "body": {
+    "contents": [
+      {
+        "color": "#333333",
+        "contents": [
+          {
+            "text": "公式ドキュメントは ",
+            "type": "span"
+          },
+          {
+            "color": "#06c755",
+            "text": "こちら",
+            "type": "span",
+            "weight": "bold"
+          },
+          {
+            "text": " からご確認ください",
+            "type": "span"
+          }
+        ],
+        "margin": "md",
+        "size": "sm",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "action": {
+          "label": "開く: こちら",
+          "type": "uri",
+          "uri": "https://developers.line.biz/"
+        },
+        "height": "sm",
+        "margin": "sm",
+        "style": "secondary",
+        "type": "button"
+      }
+    ],
+    "layout": "vertical",
+    "spacing": "md",
+    "type": "box"
+  },
+  "type": "bubble"
+}

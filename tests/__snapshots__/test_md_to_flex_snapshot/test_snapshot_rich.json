@@ -1,0 +1,319 @@
+{
+  "body": {
+    "contents": [
+      {
+        "color": "#111111",
+        "margin": "lg",
+        "size": "xl",
+        "text": "LINE Bot 通知",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "color": "#333333",
+        "contents": [
+          {
+            "text": "Markdown から ",
+            "type": "span"
+          },
+          {
+            "text": "Flex Message",
+            "type": "span",
+            "weight": "bold"
+          },
+          {
+            "text": " への自動変換テストです。",
+            "type": "span"
+          }
+        ],
+        "margin": "md",
+        "size": "sm",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "contents": [
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "•",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "箇条書き項目 1",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "•",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "color": "#0052cc",
+                        "text": " コード強調 ",
+                        "type": "span",
+                        "weight": "bold"
+                      },
+                      {
+                        "text": " 付きの項目 2",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "•",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "color": "#555555",
+                        "style": "italic",
+                        "text": "斜体テキスト",
+                        "type": "span"
+                      },
+                      {
+                        "text": " もサポート",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "spacing": "xs",
+        "type": "box"
+      },
+      {
+        "backgroundColor": "#f8f9fa",
+        "borderColor": "#cccccc",
+        "borderWidth": "semi-bold",
+        "contents": [
+          {
+            "color": "#555555",
+            "contents": [
+              {
+                "text": "これは引用ブロックです。",
+                "type": "span"
+              },
+              {
+                "text": "\n",
+                "type": "span"
+              },
+              {
+                "text": "2行目の文章です。",
+                "type": "span"
+              }
+            ],
+            "margin": "none",
+            "size": "sm",
+            "style": "italic",
+            "type": "text",
+            "wrap": true
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "paddingAll": "md",
+        "spacing": "xs",
+        "type": "box"
+      },
+      {
+        "contents": [
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "1.",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "foo",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "2.",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "bar",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "3.",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "baz",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "spacing": "xs",
+        "type": "box"
+      }
+    ],
+    "layout": "vertical",
+    "spacing": "md",
+    "type": "box"
+  },
+  "type": "bubble"
+}

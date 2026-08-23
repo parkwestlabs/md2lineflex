@@ -1,0 +1,57 @@
+{
+  "body": {
+    "contents": [
+      {
+        "color": "#111111",
+        "margin": "lg",
+        "size": "xl",
+        "text": "空と特殊文字",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "color": "#333333",
+        "contents": [
+          {
+            "text": "& < > \" ' のエスケープ検証",
+            "type": "span"
+          }
+        ],
+        "margin": "md",
+        "size": "sm",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "backgroundColor": "#f8f9fa",
+        "borderColor": "#cccccc",
+        "borderWidth": "semi-bold",
+        "contents": [
+          {
+            "color": "#555555",
+            "contents": [
+              {
+                "text": " ",
+                "type": "span"
+              }
+            ],
+            "size": "sm",
+            "style": "italic",
+            "type": "text",
+            "wrap": true
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "paddingAll": "md",
+        "spacing": "xs",
+        "type": "box"
+      }
+    ],
+    "layout": "vertical",
+    "spacing": "md",
+    "type": "box"
+  },
+  "type": "bubble"
+}

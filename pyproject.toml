@@ -1,14 +1,63 @@
 [project]
 name = "md2lineflex"
 version = "0.1.0"
-description = "Add your description here"
+description = "Markdown to LINE FlexMessage Converter"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["markdown", "LINE", "flexmessage"]
 authors = [
     { name = "parkwestlabs", email = "281970052+parkwestlabs@users.noreply.github.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "line-bot-sdk>=3.25.0",
+    "mdformat>=1.0.0",
+    "mdformat-gfm>=1.0.0",
+    "mistletoe>=1.6.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.4",
+    "syrupy>=5.5.3",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",
+    "TC",
+    "CPY",
+    "COM812",
+    "G004",     # Logging statement uses f-string
+    "INP001",   # an implicit namespace package
+]
+# RUF001, RUF002, RUF003 のすべてで「？」を無視する
+allowed-confusables = ["（", "）", "：", "？", "！", "＆", "＋"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = [
+    "S101",     # Use of assert
+    "ANN201",   # Missing return type annotation for public function
+    "PLR2004",  # Magic value used in comparison
+    "ERA001",   # Found commented-out code
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-branch --cov-report=term-missing --cov-report=html"
+
+[tool.coverage.report]
+fail_under = 90
+
+[tool.coverage.run]
+omit = [
+    "*/__init__.py",
+]

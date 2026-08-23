@@ -1,0 +1,112 @@
+{
+  "body": {
+    "contents": [
+      {
+        "color": "#111111",
+        "margin": "lg",
+        "size": "xl",
+        "text": "テスト通知",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "color": "#333333",
+        "contents": [
+          {
+            "text": "これは Markdown の変換テストです。",
+            "type": "span"
+          }
+        ],
+        "margin": "md",
+        "size": "sm",
+        "type": "text",
+        "wrap": true
+      },
+      {
+        "contents": [
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "•",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "項目 1",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "contents": [
+              {
+                "contents": [
+                  {
+                    "color": "#888888",
+                    "flex": 0,
+                    "size": "sm",
+                    "text": "•",
+                    "type": "text"
+                  },
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "項目 2",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "sm",
+                    "text": " ",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "layout": "baseline",
+                "spacing": "sm",
+                "type": "box"
+              }
+            ],
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "type": "box"
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "spacing": "xs",
+        "type": "box"
+      }
+    ],
+    "layout": "vertical",
+    "spacing": "md",
+    "type": "box"
+  },
+  "type": "bubble"
+}

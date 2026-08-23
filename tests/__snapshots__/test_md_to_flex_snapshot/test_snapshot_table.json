@@ -1,0 +1,260 @@
+{
+  "body": {
+    "contents": [
+      {
+        "color": "#111111",
+        "margin": "lg",
+        "size": "xl",
+        "text": "表の検証",
+        "type": "text",
+        "weight": "bold",
+        "wrap": true
+      },
+      {
+        "backgroundColor": "#e0e0e0",
+        "contents": [
+          {
+            "borderColor": "#cccccc",
+            "borderWidth": "1px",
+            "contents": [
+              {
+                "backgroundColor": "#f0f0f0",
+                "contents": [
+                  {
+                    "color": "#111111",
+                    "contents": [
+                      {
+                        "text": "ヘッダー1",
+                        "type": "span",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#f0f0f0",
+                "contents": [
+                  {
+                    "color": "#111111",
+                    "contents": [
+                      {
+                        "text": "ヘッダー2",
+                        "type": "span",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#f0f0f0",
+                "contents": [
+                  {
+                    "color": "#111111",
+                    "contents": [
+                      {
+                        "text": "ヘッダー3",
+                        "type": "span",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              }
+            ],
+            "layout": "horizontal",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "borderColor": "#cccccc",
+            "borderWidth": "none",
+            "contents": [
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "データ1",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "color": "#0052cc",
+                        "text": " code ",
+                        "type": "span",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "太字データ",
+                        "type": "span",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              }
+            ],
+            "layout": "horizontal",
+            "spacing": "xs",
+            "type": "box"
+          },
+          {
+            "borderColor": "#cccccc",
+            "borderWidth": "none",
+            "contents": [
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "空セルあり",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": " ",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              },
+              {
+                "backgroundColor": "#ffffff",
+                "contents": [
+                  {
+                    "color": "#333333",
+                    "contents": [
+                      {
+                        "text": "データ3",
+                        "type": "span"
+                      }
+                    ],
+                    "flex": 1,
+                    "size": "xs",
+                    "type": "text",
+                    "wrap": true
+                  }
+                ],
+                "flex": 1,
+                "layout": "vertical",
+                "paddingAll": "xs",
+                "type": "box"
+              }
+            ],
+            "layout": "horizontal",
+            "spacing": "xs",
+            "type": "box"
+          }
+        ],
+        "layout": "vertical",
+        "margin": "md",
+        "paddingAll": "1px",
+        "spacing": "2px",
+        "type": "box"
+      }
+    ],
+    "layout": "vertical",
+    "spacing": "md",
+    "type": "box"
+  },
+  "type": "bubble"
+}
