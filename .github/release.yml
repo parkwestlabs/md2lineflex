@@ -1,0 +1,23 @@
+changelog:
+  categories:
+    - title: "🚀 Features"
+      labels:
+        - "enhancement"
+        - "feature"
+      keywords:
+        - "feat"
+        - "feature"
+    - title: "🐛 Bug Fixes"
+      labels:
+        - "bug"
+        - "fix"
+      keywords:
+        - "fix"
+    - title: "🧰 Maintenance & Docs"
+      labels:
+        - "documentation"
+        - "chore"
+      keywords:
+        - "docs"
+        - "chore"
+        - "refactor"
