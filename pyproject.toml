@@ -10,12 +10,28 @@ authors = [
     { name = "parkwestlabs", email = "281970052+parkwestlabs@users.noreply.github.com" }
 ]
 requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "line-bot-sdk>=3.25.0",
     "mdformat>=1.0.0",
     "mdformat-gfm>=1.0.0",
     "mistletoe>=1.6.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/parkwestlabs/md2lineflex"
+Repository = "https://github.com/parkwestlabs/md2lineflex"
+"Bug Tracker" = "https://github.com/parkwestlabs/md2lineflex/issues"
+Changelog = "https://github.com/parkwestlabs/md2lineflex/releases"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
