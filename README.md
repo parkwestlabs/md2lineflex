@@ -1,8 +1,9 @@
 # md2lineflex - Markdown to LINE FlexMessage Converter
 
-[![PyPI version](https://img.shields.io/pypi/v/md2lineflex.svg)](https://pypi.org/project/md2lineflex/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/md2lineflex.svg)](https://pypi.org/project/md2lineflex/)
+[![PyPI version](https://img.shields.io/pypi/v/md2lineflex.svg?color=blue)](https://pypi.org/project/md2lineflex/)
+[![Python Versions](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://pypi.org/project/md2lineflex/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<!-- [![Python Versions](https://img.shields.io/pypi/pyversions/md2lineflex.svg)](https://pypi.org/project/md2lineflex/) -->
 
 A lightweight Python library that converts **Markdown text into LINE Bot Flex Messages** effortlessly.
 
