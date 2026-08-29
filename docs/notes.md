@@ -44,9 +44,15 @@ uv publish --token <your_PyPI_API_token>
 
 ### GitHub Actions
 
-* Settings ➔ BranchesBranch ➔ Protection Rule ➔ `main`
-    - Require a pull request before merging
-    - Require status checks to pass before merging
+* Settings ➔ Rulesets ➔ New ruleset ➔ Add branch ruleset
+    - Ruleset Name: `Main Branch Protection`
+    - Enforcement status: Active
+    - Target branches: Include default branch
+    - Require a pull request before merging (Required approvals: 1)
+    - Require status checks to pass
+    - Add checks: `test`
+    - push Create button
+    - note: Branches ➔ Branch protection rules is legacy
 * using PyPI Trusted Publisher (OIDC federation)
     - https://docs.astral.sh/uv/guides/integration/github/
 
