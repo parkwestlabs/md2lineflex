@@ -21,10 +21,10 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "line-bot-sdk>=3.25.0",
-    "mdformat>=1.0.0",
-    "mdformat-gfm>=1.0.0",
-    "mistletoe>=1.6.0",
+    "line-bot-sdk>=3.5.1",
+    "mdformat>=0.7.0",
+    "mdformat-gfm>=0.3.0",
+    "mistletoe>=1.2.0",
 ]
 
 [project.urls]
