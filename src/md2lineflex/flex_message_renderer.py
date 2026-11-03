@@ -50,7 +50,12 @@ from md2lineflex.flex_components import (
     table_component,
     table_row_component,
 )
-from md2lineflex.str_utils import to_json_utf8
+from md2lineflex.str_utils import (
+    IMAGE_URL_SCHEMES,
+    LINK_URL_SCHEMES,
+    is_allowed_url,
+    to_json_utf8,
+)
 
 LinkMode = Literal["url_text", "action", "button"]
 
@@ -90,7 +95,12 @@ class FlexMessageRenderer(BaseRenderer):
                 spans.append(span)
 
                 # リンクボタン (extra) の抽出 (Link かつ button モード時のみ)
-                if isinstance(child, Link) and self.link_mode == "button":
+                # 許可されていないスキームの URL はボタンにせず、テキストのみ残す
+                if (
+                    isinstance(child, Link)
+                    and self.link_mode == "button"
+                    and is_allowed_url(child.target, LINK_URL_SCHEMES)
+                ):
                     link_text = self._get_plain_text(child)
                     link_button = link_button_component(link_text, child.target)
                     extras.append(link_button)
@@ -205,7 +215,12 @@ class FlexMessageRenderer(BaseRenderer):
         children = list(token.children or [])
 
         # 段落内に画像単体のみが含まれる場合の判定
-        if len(children) == 1 and isinstance(children[0], Image):
+        # (許可されていない URL は代替テキストに戻す)
+        if (
+            len(children) == 1
+            and isinstance(children[0], Image)
+            and is_allowed_url(children[0].src, IMAGE_URL_SCHEMES)
+        ):
             img_token = children[0]
             image = image_component(img_token.src)
             return to_json_utf8(image.to_dict())
