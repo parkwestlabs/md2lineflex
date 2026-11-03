@@ -1,7 +1,7 @@
 # md2lineflex - Markdown to LINE FlexMessage Converter
 
 [![PyPI version](https://img.shields.io/pypi/v/md2lineflex.svg?color=blue)](https://pypi.org/project/md2lineflex/)
-[![Python Versions](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://pypi.org/project/md2lineflex/)
+[![Python Versions](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14%20%7C%203.15-blue.svg)](https://pypi.org/project/md2lineflex/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- [![Python Versions](https://img.shields.io/pypi/pyversions/md2lineflex.svg)](https://pypi.org/project/md2lineflex/) -->
 
@@ -23,7 +23,7 @@ Designed especially for LLM / Chatbot developers who want to render Markdown out
 ## Compatibility
 
 * `requires-python = ">=3.10"`
-* `line-bot-sdk>=3.1.0`
+* `line-bot-sdk>=3.5.1`
 * `mdformat>=0.7.0`
 * `mdformat-gfm>=0.3.0`
 * `mistletoe>=1.2.0`
@@ -40,7 +40,7 @@ uv add md2lineflex
 pip install md2lineflex
 ```
 
-Prerequisite: Python `>= 3.10` and `line-bot-sdk >= 3.0.0`
+Prerequisite: Python `>= 3.10` and `line-bot-sdk >= 3.5.1`
 
 ---
 

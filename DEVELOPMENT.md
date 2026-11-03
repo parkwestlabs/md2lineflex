@@ -63,10 +63,10 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) for commit mess
     [project]
     version = "X.Y.Z"
     ```
-2. Commit and push your changes to `main` via Pull Request:
+2. Commit on a branch, push it, and open a Pull Request to `main`. Merge after `ci-passed` is green (`main` does not accept direct pushes):
     ```bash
-    git commit -m "feat: Bump version to X.Y.Z"
-    git push origin main
+    git commit -m "chore(release): bump version to X.Y.Z"
+    git push -u origin <branch>
     ```
 3. Publish a new release on GitHub:
     * Go to GitHub UI -> **Releases** -> **Draft a new release**.
