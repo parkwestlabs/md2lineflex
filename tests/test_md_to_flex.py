@@ -1,13 +1,16 @@
 import json
 from textwrap import dedent
 
+import pytest
 from linebot.v3.messaging import FlexBox, FlexBubble, FlexMessage, FlexText
 from mistletoe.block_token import Document, Paragraph
 from mistletoe.span_token import RawText
 from mistletoe.token import Token
 
+from md2lineflex.flex_components import image_component, link_button_component
 from md2lineflex.flex_message_renderer import FlexMessageRenderer
 from md2lineflex.md_to_flex import to_flex
+from md2lineflex.str_utils import IMAGE_URL_SCHEMES, LINK_URL_SCHEMES, is_allowed_url
 
 
 class TestMdToLineFlex:
@@ -570,3 +573,100 @@ class TestCoverageEdgeCases:
         assert (
             len(spans_fallback) == 0
         )  # fallback_text が空文字のため spans に追加されない、または安全に処理終了
+
+
+class TestUrlSchemeValidation:
+    """リンク・画像 URL のスキーム限定（javascript: や file: などを拒否する）"""
+
+    @pytest.mark.parametrize(
+        "url",
+        [
+            "javascript:alert(1)",
+            "JavaScript:alert(1)",
+            "data:text/html,<script>alert(1)</script>",
+            "file:///etc/passwd",
+            "vbscript:msgbox(1)",
+            "intent://example.com#Intent;scheme=https;end",
+            "https:///no-host",
+        ],
+    )
+    def test_unsafe_link_is_not_rendered_as_button(self, url: str) -> None:
+        """許可されていないスキームのリンクは、ボタンにならずテキストだけが残ること"""
+        msg = to_flex(f"[危険]({url})", link_mode="button").to_dict()
+        body = msg["contents"]["body"]["contents"]
+
+        assert all(block["type"] != "button" for block in body)
+        # 表示内容 (contents) に URL 自体が含まれないこと
+        # (altText は通知用の元 Markdown 文字列なので対象外)
+        assert url not in json.dumps(msg["contents"], ensure_ascii=False)
+        # リンクのテキストは残ること
+        spans = body[0]["contents"]
+        assert "危険" in [span["text"] for span in spans]
+
+    @pytest.mark.parametrize(
+        "url",
+        ["https://example.com/a", "http://example.com/a", "HTTPS://example.com"],
+    )
+    def test_allowed_link_renders_button(self, url: str) -> None:
+        """http / https のリンクは従来どおりボタンになること"""
+        msg = to_flex(f"[安全]({url})", link_mode="button").to_dict()
+        buttons = [
+            block
+            for block in msg["contents"]["body"]["contents"]
+            if block["type"] == "button"
+        ]
+
+        assert len(buttons) == 1
+        assert buttons[0]["action"]["uri"] == url
+
+    @pytest.mark.parametrize(
+        "url",
+        [
+            "http://example.com/a.png",
+            "javascript:alert(1)",
+            "file:///etc/passwd",
+            "data:image/png;base64,AAAA",
+        ],
+    )
+    def test_unsafe_image_falls_back_to_alt_text(self, url: str) -> None:
+        """許可されていない画像 URL は Image にならず、代替テキストになること"""
+        msg = to_flex(f"![代替文字]({url})").to_dict()
+        body = msg["contents"]["body"]["contents"]
+
+        assert all(block["type"] != "image" for block in body)
+        # 表示内容 (contents) に URL 自体が含まれないこと
+        assert url not in json.dumps(msg["contents"], ensure_ascii=False)
+        assert "代替文字" in [span["text"] for span in body[0]["contents"]]
+
+    @pytest.mark.parametrize(
+        ("url", "schemes", "expected"),
+        [
+            ("https://example.com", LINK_URL_SCHEMES, True),
+            ("http://example.com", LINK_URL_SCHEMES, True),
+            ("javascript:alert(1)", LINK_URL_SCHEMES, False),
+            ("http://example.com", IMAGE_URL_SCHEMES, False),
+            ("https://example.com/a.png", IMAGE_URL_SCHEMES, True),
+            ("https:///x", LINK_URL_SCHEMES, False),
+            ("https://exa mple.com", LINK_URL_SCHEMES, False),
+            ("https://example.com/\nx", LINK_URL_SCHEMES, False),
+            ("https://[invalid", LINK_URL_SCHEMES, False),
+            ("", LINK_URL_SCHEMES, False),
+        ],
+    )
+    def test_is_allowed_url(
+        self,
+        url: str,
+        schemes: tuple[str, ...],
+        expected: bool,  # noqa: FBT001
+    ) -> None:
+        assert is_allowed_url(url, schemes) is expected
+
+    def test_link_button_component_rejects_unsafe_url(self) -> None:
+        """直接呼び出されても、許可されていない URL のボタンは作れないこと"""
+        with pytest.raises(ValueError, match="許可されていない"):
+            link_button_component("x", "javascript:alert(1)")
+
+    def test_image_component_rejects_http(self) -> None:
+        """画像は https のみ許可されること"""
+        with pytest.raises(ValueError, match="許可されていない"):
+            image_component("http://example.com/a.png")

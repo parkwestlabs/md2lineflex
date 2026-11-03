@@ -20,6 +20,16 @@ Designed especially for LLM / Chatbot developers who want to render Markdown out
 
 ---
 
+## Compatibility
+
+* `requires-python = ">=3.10"`
+* `line-bot-sdk>=3.1.0`
+* `mdformat>=0.7.0`
+* `mdformat-gfm>=0.3.0`
+* `mistletoe>=1.2.0`
+
+---
+
 ## Installation
 
 ```bash

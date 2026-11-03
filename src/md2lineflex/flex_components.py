@@ -9,6 +9,7 @@ from linebot.v3.messaging import (
     URIAction,
 )
 
+from md2lineflex.str_utils import IMAGE_URL_SCHEMES, LINK_URL_SCHEMES, is_allowed_url
 from md2lineflex.theme import EMPTY_CHAR, Color, Margin, Size
 
 # 共通フォールバックオブジェクト
@@ -138,6 +139,10 @@ def quote_box_component(contents: list[FlexComponent]) -> FlexBox:
 
 
 def link_button_component(link_text: str, target_url: str) -> FlexButton:
+    if not is_allowed_url(target_url, LINK_URL_SCHEMES):
+        msg = f"許可されていないリンク URL です: {target_url!r}"
+        raise ValueError(msg)
+
     return FlexButton(
         style="secondary",
         height="sm",
@@ -151,6 +156,10 @@ def link_button_component(link_text: str, target_url: str) -> FlexButton:
 
 
 def image_component(url: str) -> FlexImage:
+    if not is_allowed_url(url, IMAGE_URL_SCHEMES):
+        msg = f"許可されていない画像 URL です: {url!r}"
+        raise ValueError(msg)
+
     return FlexImage(
         url=url,
         size="full",
