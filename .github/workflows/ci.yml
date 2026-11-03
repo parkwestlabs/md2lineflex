@@ -5,12 +5,15 @@ on:
     branches: [ main ]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -24,7 +27,7 @@ jobs:
         uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           enable-cache: true
-          version: "0.12.5"
+          version: "0.13.6"
 
       - name: Install the project
         run: uv sync --locked --all-extras --dev
@@ -34,3 +37,19 @@ jobs:
           uv run ruff check .
           uv run ruff format --check --diff .
           uv run pytest -v
+
+      - name: Compatibility test
+        run: |
+          uv run --isolated --resolution lowest-direct pytest -v
+
+  ci-passed:
+    runs-on: ubuntu-latest
+    needs: test
+    if: always()
+    steps:
+      - name: Check matrix job results
+        run: |
+          if [ "${{ needs.test.result }}" != "success" ]; then
+            echo "test result: ${{ needs.test.result }}"
+            exit 1
+          fi
