@@ -78,3 +78,51 @@ MIT License
 curl -s https://raw.githubusercontent.com/licenses/license-templates/master/templates/mit.txt | \
 sed "s/{{ year }}/$(date +%Y)/g; s/{{ organization }}/$(git config user.name)/g" > LICENSE
 ```
+
+## Compatibility Check
+
+* ensure pytest pass in the latest version
+
+```bash
+uv sync --resolution highest
+uv run pytest -v
+```
+
+* add `--resolution lowest-direct` equivalent in `pyproject.toml` temporarily
+
+```
+[tool.uv]
+resolution = "lowest-direct"
+```
+
+* update (downgrade) dependencies in pyproject.toml and try pytest
+* repeat this downgrade as far as pytest pass
+
+```bash
+uv lock && uv sync && uv run pytest -v
+
+# check actual versions
+uv pip list
+uv tree
+uv tree --invert --package package_name
+
+arr=(line-bot-sdk mdformat mdformat-gfm mistletoe)
+for pkg in "${arr[@]}";
+do; uv tree --invert --package  $pkg; done
+```
+
+* after find lower limit, remove `resolution = "lowest-direct"` and reset to the latest
+
+```bash
+uv sync --resolution highest
+uv run pytest -v
+```
+
+## Upgrade Packages
+
+```bash
+uv pip list --outdated
+
+uv sync --upgrade --dry-run
+uv sync --upgrade
+```
